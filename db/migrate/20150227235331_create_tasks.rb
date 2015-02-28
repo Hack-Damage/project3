@@ -1,9 +1,9 @@
 class CreateTasks < ActiveRecord::Migration
   def change
     create_table :tasks do |t|
-      t.string :title
-      t.User :reference
-      t.Task :reference
+      t.string :name
+      t.boolean :is_complete
+      t.references :user
 
       t.timestamps null: false
     end
